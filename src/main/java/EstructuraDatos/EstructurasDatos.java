@@ -5,6 +5,7 @@
 package EstructuraDatos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -59,5 +60,43 @@ public class EstructurasDatos {
         System.out.println("contiene el 15? "+lista.contains(15));
         
         System.out.println("posicion donde esta el elemento 15 : " + lista.indexOf(15));
+        //borrado con objeto
+        lista.remove(Integer.valueOf(20));
+        System.out.println("borrar posicion valor 20 \n" + lista);
+        
+        //borrado por posicion (int) tiene que ser valida dentro dela lista
+        
+        lista.remove(0);
+        System.out.println("borrado posicion 0\n" + lista);
+        
+        //formas de recorrer la lista
+        
+        for(int i=0;i<lista.size();i++){
+            System.out.println(lista.get(i));
+        }
+        
+        //foreach
+        
+        for(Integer var:lista){
+            System.out.println("numero: " + var);
+        }
+        
+        //recorido con un iterador
+        
+       Iterator<Integer> it=lista.iterator();
+
+       while(it.hasNext()){
+           System.out.println(it.next());
+       }
+        
+       
+        System.out.println("----------------------------------");
+        
+        //expresion lamda y api Stream
+        lista.forEach(e->System.out.println(e));
+        
+        lista.forEach(System.out::println);
+        
+        
     }
 }
