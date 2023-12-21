@@ -39,5 +39,25 @@ public class EstructurasDatos {
         }catch(IndexOutOfBoundsException iob){
             System.out.println("elemento no valido");
         }
+        //añade el elemento en la posicion indicada, la posicion debe ser 
+        //>=0y menor que size()
+        lista.add(2, 20);
+        System.out.println(lista);
+        
+        //cambiar un dato de una posicion
+        
+        lista.set(3, 15);
+        System.out.println(lista);
+        
+        if (lista.isEmpty()){
+            System.out.println("la lista esta vacia");
+        }else{
+            System.out.println("la lista tiene elementos");
+        }
+        
+        System.out.println("contiene el 5? "+lista.contains(5));
+        System.out.println("contiene el 15? "+lista.contains(15));
+        
+        System.out.println("posicion donde esta el elemento 15 : " + lista.indexOf(15));
     }
 }
