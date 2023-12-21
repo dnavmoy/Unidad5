@@ -33,5 +33,11 @@ public class EstructurasDatos {
         System.out.println("tamaño " + lista.size());
         System.out.println(lista);
         System.out.println("elemento de la posicion dos:" + lista.get(2));
+        
+        try{
+             System.out.println("elemento de la posicion 15:" + lista.get(15));
+        }catch(IndexOutOfBoundsException iob){
+            System.out.println("elemento no valido");
+        }
     }
 }
