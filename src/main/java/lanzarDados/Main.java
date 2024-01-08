@@ -21,10 +21,15 @@ public class Main {
 //metodo que borre todos los elementos que tenga esa cara
     public static void main(String[] args) {
         
-        LanzarDado dado1 = new LanzarDado();
-        System.out.println(dado1);
+//        LanzarDado dado1 = new LanzarDado();
+//        System.out.println(dado1);
         
-        LanzarDado dado2 = new LanzarDado(50);
+        LanzarDado dado2 = new LanzarDado(10);
+        System.out.println(dado2);
+        
+        System.out.println(dado2.contarCaras(1));
+        System.out.println("borrar caras 1 ");
+        dado2.borrarCaras(1);
         System.out.println(dado2);
     }
  
