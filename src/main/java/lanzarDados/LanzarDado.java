@@ -75,8 +75,8 @@ public class LanzarDado {
         Iterator<Integer> it = lanzarDado.iterator();
         
         while (it.hasNext()) {
-            Integer i = it.next();
-            if (i == valor) {
+            
+            if (it.next() == valor) {
                 it.remove();
             }
            

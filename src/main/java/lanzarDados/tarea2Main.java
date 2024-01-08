@@ -16,4 +16,8 @@ public class tarea2Main {
 //  Crea una tercera lista con los elementos de la primera que no están en la 
 //          segunda. Imprime el resultado usando API Stream y lambdas.
     
+    public static void main(String[] args) {
+        
+        
+    }
 }
