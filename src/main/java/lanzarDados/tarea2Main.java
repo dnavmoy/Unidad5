@@ -18,6 +18,12 @@ public class tarea2Main {
     
     public static void main(String[] args) {
         
+        ListaLetras primera = new ListaLetras();
+        ListaLetras segunda = new ListaLetras();
+        
+        ListaLetras tercera = new ListaLetras(primera,segunda);
+        System.out.println(tercera);
+        
         
     }
 }
