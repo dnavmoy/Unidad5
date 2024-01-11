@@ -23,7 +23,7 @@ public class tarea2Main {
         
         ListaLetras tercera = new ListaLetras(primera,segunda);
         System.out.println(tercera);
-        
+       
         
     }
 }

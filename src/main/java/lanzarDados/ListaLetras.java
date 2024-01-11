@@ -65,9 +65,13 @@ public class ListaLetras {
                     listaLetras.add(uno.listaLetras.get(i));
                 }
             }
-
+            //listaLetras.forEach(e->System.out.println(e));
         }
+        
     }
+    
+    
+    
 
     
 
