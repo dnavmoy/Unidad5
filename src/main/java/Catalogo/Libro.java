@@ -32,6 +32,9 @@ public class Libro {
         this.editorial = origen.editorial;
         this.numPags = origen.numPags;
     }
+    public Libro(){
+        
+    }
 
     public String getIsbn() {
         return isbn;
