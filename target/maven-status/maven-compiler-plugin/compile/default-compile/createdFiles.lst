@@ -1,12 +1,14 @@
 EstructuraDatos/EstructurasDatos.class
 lanzarDados/Main.class
-EjemploPropioCatalogo/Catalogo.class
 lanzarDados/LanzarDado.class
 EjemploPropioCatalogo/Espadas.class
+lanzarDados/tarea2Main.class
+Catalogo/RecordLibro$Libro.class
+EjemploPropioCatalogo/Catalogo.class
 EjemploPropioCatalogo/Paises.class
 lanzarDados/ListaLetras.class
 Catalogo/CatalogoLibros.class
 enclase/unidad5/Unidad5.class
-lanzarDados/tarea2Main.class
 enclase/unidad5/Cliente.class
 Catalogo/Libro.class
+Catalogo/RecordLibro.class

@@ -58,7 +58,18 @@ public class Catalogo {
         Collections.sort(armeria, criterioEpoca.reversed());
         armeria.forEach(System.out::println);
         
+       
         
+        
+        Espadas x = new Espadas();
+        x.setLargo(88);
+        int posicion = Collections.binarySearch(armeria, x, (e1,e2) -> Integer.compare(e1.getLargo(), e2.getLargo()));
+        System.out.println("posicion 1550 -> " + posicion);
+        
+        
+         Comparator<Espadas> criterioepocaPeso= criterioEpoca.thenComparing(criterioPeso);
+        
+      /*  
         Function<String,String> pedirDatoString = x-> JOptionPane.showInputDialog(x);
         Function<String,Integer> pedirDatoInt = x-> Integer.parseInt(JOptionPane.showInputDialog(x));
         Function<String,Double> pedirDatoDouble = x-> Double.parseDouble(JOptionPane.showInputDialog(x));
@@ -75,7 +86,7 @@ public class Catalogo {
         armeria.forEach(System.out::println);
         
         
-        
+        */
     }
     }
 

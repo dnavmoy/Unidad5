@@ -4,6 +4,8 @@
  */
 package EjemploPropioCatalogo;
 
+import java.util.Objects;
+
 /**
  *
  * @author daniel
@@ -87,6 +89,44 @@ public class Espadas {
         sb.append(", pais=").append(pais);
         sb.append('}');
         return sb.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 13 * hash + Objects.hashCode(this.nombre);
+        hash = 13 * hash + this.Largo;
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.peso) ^ (Double.doubleToLongBits(this.peso) >>> 32));
+        hash = 13 * hash + this.epoca;
+        hash = 13 * hash + Objects.hashCode(this.pais);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Espadas other = (Espadas) obj;
+        if (this.Largo != other.Largo) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.peso) != Double.doubleToLongBits(other.peso)) {
+            return false;
+        }
+        if (this.epoca != other.epoca) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return this.pais == other.pais;
     }
     
     
