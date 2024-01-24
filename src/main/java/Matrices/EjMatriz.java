@@ -42,9 +42,11 @@ public class EjMatriz {
         }
 
         Scanner teclado = new Scanner(System.in);
-
+        //pedir fila a sumar
         int fila = pedirInt("\nintroduce fila:");
         int contador = 0;
+        //recorre la fila y suma la posicion [fila] recorriendo la columna[j] y
+        //sumando
         for (int j = 0; j < matriz[fila].length; j++) {
             contador += matriz[fila][j];
 
@@ -53,7 +55,7 @@ public class EjMatriz {
 
         int columna = pedirInt("\n que columna?");
         contador = 0;
-
+        //recorre la columna [columna] sumando los valores de la matriz [i]
         for (int i = 0; i < matriz.length; i++) {
 
             contador += matriz[i][columna];
