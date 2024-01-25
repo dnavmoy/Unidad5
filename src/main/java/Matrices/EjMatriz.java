@@ -64,6 +64,7 @@ public class EjMatriz {
         System.out.println("la suma de la columna es: " + contador);
     }
 
+    
     public static int pedirInt(String texto) {
         Scanner teclado = new Scanner(System.in);
         int numero = 0;
