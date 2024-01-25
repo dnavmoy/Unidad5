@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Catalogo\Libro.class
 enclase\unidad5\Unidad5.class
 Catalogo\CatalogoLibros.class
@@ -13,3 +14,21 @@ Catalogo\RecordLibro.class
 EjemploPropioCatalogo\Paises.class
 EjemploPropioCatalogo\Catalogo.class
 enclase\unidad5\Cliente.class
+=======
+EstructuraDatos/EstructurasDatos.class
+lanzarDados/Main.class
+lanzarDados/LanzarDado.class
+EjemploPropioCatalogo/Espadas.class
+lanzarDados/tarea2Main.class
+EjemploMatriz/Ej240122.class
+Catalogo/RecordLibro$Libro.class
+EjemploPropioCatalogo/Catalogo.class
+EjemploPropioCatalogo/Paises.class
+lanzarDados/ListaLetras.class
+Catalogo/CatalogoLibros.class
+enclase/unidad5/Unidad5.class
+enclase/unidad5/Cliente.class
+EjemploMatriz/EjemploMatriz.class
+Catalogo/Libro.class
+Catalogo/RecordLibro.class
+>>>>>>> Stashed changes

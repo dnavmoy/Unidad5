@@ -68,6 +68,9 @@ public class CatalogoLibros {
                 (e1, e2) -> e1.getIsbn().compareToIgnoreCase(e2.getIsbn()));
         System.out.println("el libro de isbn 123 esta en " + posicion);
         
+        
+       
+        
 
 //        System.out.println(l1);
 //        System.out.println(l2);
