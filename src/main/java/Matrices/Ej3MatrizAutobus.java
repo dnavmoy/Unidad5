@@ -22,29 +22,34 @@ public class Ej3MatrizAutobus {
 
         boolean[][] autobus = new boolean[12][4];
         boolean continuar = true;
-        String[] filaMenu ={"1","2","3","4","5","6","7","8","9","10","11","12"}; 
-        String[] filaAsiento={"a","b","c","d"};
+        String[] filaMenu = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+        String[] filaAsiento = {"a", "b", "c", "d"};
         do {
             String[] menu = {"salir", "Reserva", "Reserva Movilidad Reducida", "Ver autobus"};
             int respuesta = respuestaBoton(menu);
             switch (respuesta) {
                 case 1:
-                    int fila=(respuestaListaFila(filaMenu)-1);
-                    int asiento=respuestaListaAsiento(filaAsiento);
-                    if(comprobar(autobus, fila, asiento)){
-                        JOptionPane.showMessageDialog(null, "asiento ya reservado, seleccione otro");
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Reserva realizada");
+
+                    int fila = (respuestaListaFila(filaMenu) - 1);
+                    int asiento = respuestaListaAsiento(filaAsiento);
+                    if (fila == 15 || asiento == 10) {
+                        JOptionPane.showMessageDialog(null, "asiento no valido");
+                    } else {
+                        if (comprobar(autobus, fila, asiento)) {
+                            JOptionPane.showMessageDialog(null, "asiento ya reservado, seleccione otro");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Reserva realizada");
+                        }
+                        reservaAsiento(autobus, fila, asiento);
                     }
-                    reservaAsiento(autobus, fila, asiento);
                     break;
                 case 2:
-                    fila=fila=(respuestaListaFila(filaMenu)-1);
-                    asiento=asiento=respuestaListaAsiento(filaAsiento);
-                    if(!comprobarMovilidad(autobus, fila, asiento)){
-                    reservaMovilidad(autobus, fila, asiento);
-                    JOptionPane.showMessageDialog(null, "asiento reservado");
-                    }else{
+                    fila = fila = (respuestaListaFila(filaMenu) - 1);
+                    asiento = asiento = respuestaListaAsiento(filaAsiento);
+                    if (!comprobarMovilidad(autobus, fila, asiento)) {
+                        reservaMovilidad(autobus, fila, asiento);
+                        JOptionPane.showMessageDialog(null, "asiento reservado");
+                    } else {
                         JOptionPane.showMessageDialog(null, "no hay espacio suficiente");
                     }
                     break;
@@ -64,7 +69,7 @@ public class Ej3MatrizAutobus {
 
         for (int i = 0; i < autobus.length; i++) {
 
-            autobusTexto = autobusTexto.concat(String.valueOf("fila :   " + (i+1) + " " + booleanChar(autobus[i][0]))
+            autobusTexto = autobusTexto.concat(String.valueOf("fila :   " + (i + 1) + " " + booleanChar(autobus[i][0]))
                     + String.valueOf(booleanChar(autobus[i][1])) + "--"
                     + String.valueOf(booleanChar(autobus[i][2])) + String.valueOf(booleanChar(autobus[i][3])) + "\n");
 
@@ -97,68 +102,71 @@ public class Ej3MatrizAutobus {
 
         return seleccion;
     }
-    
-    public static int respuestaListaFila(String[] fila){
-       
-        
-    String devTexto = (String) JOptionPane.showInputDialog(null,
-        "seleccion", "EligeAsiento", JOptionPane.QUESTION_MESSAGE, null,
-        fila, fila[0]);
 
-    int devolver= Integer.parseInt(devTexto);
-    return devolver;
+    public static int respuestaListaFila(String[] fila) {
+        int devolver = 0;
+
+        String devTexto = (String) JOptionPane.showInputDialog(null,
+                "seleccion", "EligeAsiento", JOptionPane.QUESTION_MESSAGE, null,
+                fila, fila[0]);
+        if (devTexto == null) {
+            devolver = 15;
+        } else {
+            devolver = Integer.parseInt(devTexto);
+        }
+        return devolver;
     }
-    public static int respuestaListaAsiento(String[] fila){
-       
 
-    String devTexto = (String) JOptionPane.showInputDialog(null,
-        "seleccion", "EligeAsiento", JOptionPane.QUESTION_MESSAGE, null,
-        fila, fila[0]);
+    public static int respuestaListaAsiento(String[] fila) {
 
-    int devolver=0;
-    if("a".equals(devTexto)){
-        devolver=0;
-    }else if("b".equals(devTexto)){
-        devolver=1;
-    }else if("c".equals(devTexto)){
-        devolver=2;
-    }else {
-        devolver=3;
-    }
-        
-    return devolver;
+        String devTexto = (String) JOptionPane.showInputDialog(null,
+                "seleccion", "EligeAsiento", JOptionPane.QUESTION_MESSAGE, null,
+                fila, fila[0]);
+
+        int devolver = 0;
+        if ("a".equals(devTexto)) {
+            devolver = 0;
+        } else if ("b".equals(devTexto)) {
+            devolver = 1;
+        } else if ("c".equals(devTexto)) {
+            devolver = 2;
+        } else if (("d".equals(devTexto))){
+            devolver = 3;
+        }else devolver=10;
+
+        return devolver;
     }
 
     public static boolean reservaAsiento(boolean[][] autobus, int fila, int asiento) {
-        boolean reservado=false;
+        boolean reservado = false;
         try {
             if (!autobus[fila][asiento]) {
-              autobus[fila][asiento] = true;
-            } 
+                autobus[fila][asiento] = true;
+            }
         } catch (ArrayIndexOutOfBoundsException AOB) {
         }
         return reservado;
     }
 
     public static void reservaMovilidad(boolean[][] autobus, int fila, int asiento) {
-        
-            for (int i = fila - 1; i <= (fila + 1); i++) {
-                for (int j = asiento - 1; j <= (asiento + 1); j++) {
-                    reservaAsiento(autobus, i, j);
-                }
 
+        for (int i = fila - 1; i <= (fila + 1); i++) {
+            for (int j = asiento - 1; j <= (asiento + 1); j++) {
+                reservaAsiento(autobus, i, j);
             }
-        
-            
+
+        }
+
     }
-    public static boolean comprobar(boolean[][] autobus, int fila, int asiento){
-        boolean reservado=false;
-        try{
+
+    public static boolean comprobar(boolean[][] autobus, int fila, int asiento) {
+        boolean reservado = false;
+        try {
             if (autobus[fila][asiento]) {
-                    reservado = true;
-                }
-        }catch(ArrayIndexOutOfBoundsException AOB){
-           
+                reservado = true;
+            }
+        } catch (ArrayIndexOutOfBoundsException AOB) {
+
         }
         return reservado;
     }
@@ -167,7 +175,7 @@ public class Ej3MatrizAutobus {
         boolean reservado = false;
         for (int i = fila - 1; i <= (fila + 1); i++) {
             for (int j = asiento - 1; j <= (asiento + 1); j++) {
-                if (comprobar(autobus,i,j)) {
+                if (comprobar(autobus, i, j)) {
                     reservado = true;
                 }
             }
